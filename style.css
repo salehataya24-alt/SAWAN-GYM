@@ -199,3 +199,23 @@ html[lang=ar] h1,html[lang=ar] h2,html[lang=ar] h3{font-family:'Rakkas','Tajawal
 html[lang=ar] body,html[lang=ar] button,html[lang=ar] input,html[lang=ar] select,html[lang=ar] textarea{font-family:'Tajawal','Segoe UI',Tahoma,sans-serif}
 html[lang=en] h1,html[lang=en] h2,html[lang=en] h3{font-family:'Big Shoulders Display','Arial Narrow',Impact,sans-serif;font-synthesis:none}
 html[lang=en] body,html[lang=en] button,html[lang=en] input,html[lang=en] select,html[lang=en] textarea{font-family:'Barlow','Segoe UI',Arial,sans-serif}
+
+
+/* Mobile compatibility fixes */
+html, body { max-width: 100%; overflow-x: clip; }
+@media (max-width: 600px) {
+  .wrap { width: calc(100% - 28px); }
+  .bar { gap: 8px; height: 62px; }
+  .bar img { max-width: 118px; height: auto; max-height: 46px; }
+  .lang, .burger { padding: 6px 10px; font-size: .85rem; }
+  .hero { min-height: 100svh; min-height: 100vh; padding: 100px 0 76px; }
+  .hero h1 { font-size: clamp(2.7rem, 13vw, 4.5rem); overflow-wrap: anywhere; }
+  html[lang=ar] .hero h1 { font-size: clamp(2.4rem, 10vw, 4rem); }
+  .hero p { font-size: 1rem; }
+  .btn { padding: 11px 16px; font-size: .92rem; }
+  .btn.ghost { margin-inline-start: 0; }
+  .cta { display: flex; flex-wrap: wrap; gap: 10px; }
+  .plans { grid-template-columns: 1fr; max-width: 100%; }
+  .slider { aspect-ratio: 4 / 3; }
+  form { padding: 18px; }
+}
