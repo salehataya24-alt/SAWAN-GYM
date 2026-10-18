@@ -1,0 +1,2 @@
+ضع داخل هذا المجلد الصور التالية: logo.webp و home.webp و 1.webp و 2.webp و 3.webp و 4.webp.
+يُستخدم logo.webp كشعار الموقع وأيقونة التبويب.

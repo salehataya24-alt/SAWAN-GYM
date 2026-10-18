@@ -86,6 +86,22 @@ nm.innerHTML=sls.map((_,i)=>`<button type="button" aria-label="${i+1}">${i+1}</b
 function go(i){si=(i+sls.length)%sls.length;sls.forEach((x,k)=>x.classList.toggle("on",k===si));[...nm.children].forEach((b,k)=>b.classList.toggle("on",k===si));$("#count").textContent=(si+1)+" / "+sls.length}
 function play(){clearInterval(st);if(!matchMedia("(prefers-reduced-motion:reduce)").matches)st=setInterval(()=>go(si+1),3500)}
 nm.onclick=e=>{const b=e.target.closest("button");if(b){go([...nm.children].indexOf(b));play()}};go(0);play();
+
+// Click any gym photo to open a full-screen gallery with previous/next navigation.
+const lightbox=$("#galleryLightbox"), lightboxImage=$("#lightboxImage"), lightboxCount=$("#lightboxCount");
+let lightboxWasPlaying=false, touchStartX=0;
+function showLightboxImage(i){go(i);const active=sls[si];lightboxImage.src=active.currentSrc||active.src;lightboxImage.alt=active.alt||`Sawan Gym photo ${si+1}`;lightboxCount.textContent=`${si+1} / ${sls.length}`;}
+function openLightbox(i){lightboxWasPlaying=!!st;clearInterval(st);st=null;showLightboxImage(i);lightbox.hidden=false;document.body.classList.add("lightbox-open");$("#lightboxClose").focus();}
+function closeLightbox(){lightbox.hidden=true;document.body.classList.remove("lightbox-open");if(lightboxWasPlaying)play();}
+function stepLightbox(delta){showLightboxImage(si+delta);}
+sls.forEach((img,i)=>{img.tabIndex=0;img.setAttribute("role","button");img.setAttribute("aria-label",`عرض الصورة ${i+1} بحجم كبير`);img.addEventListener("click",()=>openLightbox(i));img.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();openLightbox(i)}})});
+$("#lightboxClose").addEventListener("click",closeLightbox);
+$("#lightboxPrev").addEventListener("click",()=>stepLightbox(-1));
+$("#lightboxNext").addEventListener("click",()=>stepLightbox(1));
+lightbox.addEventListener("click",e=>{if(e.target===lightbox)closeLightbox()});
+lightbox.addEventListener("touchstart",e=>{touchStartX=e.changedTouches[0].clientX},{passive:true});
+lightbox.addEventListener("touchend",e=>{const dx=e.changedTouches[0].clientX-touchStartX;if(Math.abs(dx)>45)stepLightbox(dx<0?1:-1)},{passive:true});
+document.addEventListener("keydown",e=>{if(lightbox.hidden)return;if(e.key==="Escape")closeLightbox();else if(e.key==="ArrowRight")stepLightbox(1);else if(e.key==="ArrowLeft")stepLightbox(-1)});
 const OFFERS=[];
 function offersDraw(){const t=T[L];$("#offersList").innerHTML=OFFERS.length?OFFERS.map(o=>`<div class="plan"><h3>${o[L].title}</h3><p>${o[L].text}</p></div>`).join(""):`<p class="noofr">${t.noOffer}</p>`}
 $("#coachMore").onclick=e=>{const b=e.target.closest("button");if(!b)return;shown=b.dataset.m==="more"?shown+3:b.dataset.m==="all"?1e9:3;drawCoaches()};
