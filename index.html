@@ -18,9 +18,34 @@
 <nav id="nav" aria-label="Main">
 <a href="#home" data-i="n0"></a><a href="#explore" data-i="n1"></a><a href="#offers" data-i="n2"></a><a href="#coaches" data-i="n3"></a><a href="#join" data-i="n4"></a><a href="#contact" data-i="n5"></a>
 </nav>
+<button class="my-card-btn" id="openMemberCard" type="button"><span class="card-chip">▦</span><span data-card-label>بطاقتي</span></button>
 <button class="lang" id="lang" type="button"></button>
 <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false">☰</button>
 </div></header>
+
+<div class="member-modal" id="memberModal" hidden role="dialog" aria-modal="true" aria-labelledby="memberModalTitle">
+  <div class="member-panel">
+    <button class="member-close" id="closeMemberCard" type="button" aria-label="Close">×</button>
+    <div class="member-orbit" aria-hidden="true"><span>▦</span></div>
+    <p class="member-kicker">SAWAN GYM · MEMBER ACCESS</p>
+    <h2 id="memberModalTitle" data-card-title>بطاقتي</h2>
+    <p class="member-intro" data-card-intro>أدخل رقم عضويتك ورقم الموبايل المسجّل لدى النادي لعرض بطاقتك.</p>
+    <form id="memberLoginForm" class="member-form">
+      <label><span data-card-number-label>رقم العضوية</span><input id="memberNumber" name="memberNumber" inputmode="numeric" autocomplete="off" required maxlength="40" placeholder="مثال: 1025"></label>
+      <label><span data-card-phone-label>رقم الموبايل</span><input id="memberPhone" name="memberPhone" type="tel" autocomplete="tel" required maxlength="30" placeholder="09xxxxxxxx"></label>
+      <button class="btn main" type="submit" id="memberSubmit"><span data-card-submit>عرض بطاقتي</span><span class="member-arrow">↗</span></button>
+      <p class="member-error" id="memberError" role="status" aria-live="polite"></p>
+    </form>
+    <article class="member-result" id="memberResult" hidden aria-live="polite">
+      <div class="member-pass-head"><span>SAWAN GYM</span><span class="member-live-dot"></span></div>
+      <h3 id="memberName">—</h3><p class="member-code" id="memberCode"></p>
+      <div class="member-qr-wrap"><img id="memberQr" alt="Member QR code" hidden><div id="memberQrFallback" class="member-qr-fallback">QR</div></div>
+      <div class="member-stats"><div><b id="memberTotal">—</b><span data-card-total>الجلسات المسجلة</span></div><div><b id="memberRemaining">—</b><span data-card-remaining>الجلسات المتبقية</span></div></div>
+      <p class="member-footnote" data-card-footnote>أظهر رمز QR عند الاستقبال.</p>
+      <button type="button" class="btn line member-back" id="memberBack" data-card-back>العودة</button>
+    </article>
+  </div>
+</div>
 
 <main id="top">
 <section id="home" class="hero page">
@@ -96,6 +121,7 @@
 </main>
 <footer><div class="ledline"></div><div class="wrap" data-i="ft"></div></footer>
 
-<script src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+<script src="script.js" defer></script>
 </body>
 </html>
