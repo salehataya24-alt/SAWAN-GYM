@@ -116,7 +116,7 @@ function offersDraw(){
 }
 function escapeText(v){return String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 async function loadPublicOffers(){
- try{const r=await fetch("/api/offers",{headers:{Accept:"application/json"},cache:"no-store"});if(!r.ok)throw Error("offers unavailable");const d=await r.json();const arr=Array.isArray(d)?d:(Array.isArray(d.offers)?d.offers:[]);liveOffers=arr.filter(o=>o&&(o.active!==false&&o.published!==false&&o.status!=="draft"));offersDraw()}catch(e){liveOffers=[];offersDraw()}
+ try{const r=await fetch("https://sawangym-management.onrender.com/api/public/offers-site", {headers:{Accept:"application/json"},cache:"no-store"});if(!r.ok)throw Error("offers unavailable");const d=await r.json();const arr=Array.isArray(d)?d:(Array.isArray(d.offers)?d.offers:[]);liveOffers=arr.filter(o=>o&&(o.active!==false&&o.published!==false&&o.status!=="draft"));offersDraw()}catch(e){liveOffers=[];offersDraw()}
 }
 loadPublicOffers();
 $("#coachMore").onclick=e=>{const b=e.target.closest("button");if(!b)return;shown=b.dataset.m==="more"?shown+3:b.dataset.m==="all"?1e9:3;drawCoaches()};
