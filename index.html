@@ -7,8 +7,7 @@
 <title>Sawan Gym | نادي صوان الرياضي</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Archivo:wght@400;500;600;700;800&family=Archivo+Black&display=block" rel="stylesheet">
-<script>(function(){var d=document.documentElement,go=function(){d.classList.add('fonts-ready')};try{var f=document.fonts;Promise.race([Promise.all([f.load('900 1em Cairo','نادي صوان'),f.load('700 1em Cairo','نادي صوان'),f.load('400 1em "Archivo Black"','SAWAN GYM'),f.load('700 1em Archivo','SAWAN GYM')]),new Promise(function(r){setTimeout(r,2500)})]).then(go,go)}catch(e){go()}})()</script>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Barlow:wght@400;500;600&family=Lalezar&family=Rakkas&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/webp" href="pics/logo.webp">
 <link rel="shortcut icon" type="image/webp" href="pics/logo.webp">
 <link rel="stylesheet" href="style.css">
@@ -41,7 +40,8 @@
       <div class="member-pass-head"><span>SAWAN GYM</span><span class="member-live-dot"></span></div>
       <h3 id="memberName">—</h3><p class="member-code" id="memberCode"></p>
       <div class="member-qr-wrap"><img id="memberQr" alt="Member QR code" hidden><div id="memberQrFallback" class="member-qr-fallback">QR</div></div>
-      <div class="member-stats"><div><b id="memberTotal">—</b><span data-card-total>الجلسات المسجلة</span></div><div><b id="memberRemaining">—</b><span data-card-remaining>الجلسات المتبقية</span></div></div>
+      <div class="member-stats"><div><b id="memberTotal">—</b><span data-card-total>إجمالي الجلسات</span></div><div><b id="memberUsed">—</b><span data-card-used>الجلسات المستخدمة</span></div><div><b id="memberRemaining">—</b><span data-card-remaining>الجلسات المتبقية</span></div></div>
+      <div class="member-subscription"><div><span data-card-plan-label>نوع الاشتراك</span><b id="memberPlan">—</b></div><div><span data-card-end-label>انتهاء الاشتراك</span><b id="memberEnd">—</b></div><div><span data-card-status-label>حالة الاشتراك</span><b id="memberStatus">—</b></div></div>
       <p class="member-footnote" data-card-footnote>أظهر رمز QR عند الاستقبال.</p>
       <button type="button" class="btn line member-back" id="memberBack" data-card-back>العودة</button>
     </article>
