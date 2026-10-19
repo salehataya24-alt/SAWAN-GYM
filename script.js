@@ -1,6 +1,6 @@
 const T={
 ar:{n0:"الرئيسية",n1:"استكشف",n2:"العروض",n3:"المدربون",n4:"انضم إلينا",n5:"تواصل معنا",
-h1a:"ابنِ جسمك",h1b:"بقوة وانضباط",hp:"نادي متخصص في بناء الأجسام واللياقة البدنية، بأجهزة حديثة وبيئة تدريب احترافية بإشراف مدربين متخصصين.",
+h1a:"نادي صوّان",h1b:"الرياضي",hp:"نادي متخصص في بناء الأجسام واللياقة البدنية، بأجهزة حديثة وبيئة تدريب احترافية بإشراف مدربين متخصصين.",
 cta1:"اشترك الآن",hrows:[["الرجال — صباحاً","7:00 ص – 10:30 ص"],["الرجال — مساءً","3:00 م – 11:00 م"],["السيدات","11:00 ص – 2:30 م"],["العطلة الرسمية","يوم الجمعة"]],
 fg:"القسم",ft2:"الوقت",fAll:"الكل",fBoys:"شباب",fGirls:"بنات",tAm:"7:00 ص – 10:30 ص",tMid:"11:00 ص – 2:30 م",tPm:"3:00 م – 11:00 م",tP1:"3:00 م – 7:00 م",tP2:"7:00 م – 11:00 م",none:"لا يوجد مدربون ضمن هذا الاختيار.",cName:"اسم المدرب",cRole:"التخصص",
 noOffer:"لا يوجد عروض حالياً",plansT:"الاشتراكات",more:"عرض المزيد",all:"عرض الكل",less:"عرض أقل",ig:"إنستغرام",fb:"فيسبوك",wa:"واتساب",cp:"الشكاوي والاقتراحات",cpH:"أرسل لنا ملاحظتك",soon:"قريباً",mapT:"موقع النادي",mapA:"ركن الدين – شارع أسد الدين",mapB:"قرب جامع حموليلا",mapBtn:"افتح في خرائط غوغل",mapQ:"نادي صوان الرياضي ركن الدين دمشق",mapS:"أسد الدين",cta2:"استكشف النادي",
@@ -21,7 +21,7 @@ k1:"تواصل معنا",k2:"تابعنا على مواقع التواصل أو 
 men:"الرجال",wom:"السيدات",mh:"7:00 ص – 10:30 ص  |  3:00 م – 11:00 م",wh:"11:00 ص – 2:30 م",fri:"العطلة الرسمية: يوم الجمعة",
 open:"مفتوح الآن",shut:"مغلق الآن",ft:"© Sawan Gym · نادي صوان الرياضي",tog:"English",menW:"الرجال",womW:"السيدات"},
 en:{n0:"Home",n1:"Explore",n2:"Offers",n3:"Coaches",n4:"Join us",n5:"Contact",
-h1a:"Build strong.",h1b:"Train serious.",hp:"A gym built for bodybuilding and fitness, with modern equipment and a professional training space guided by specialist coaches.",
+h1a:"SAWAN",h1b:"GYM",hp:"A gym built for bodybuilding and fitness, with modern equipment and a professional training space guided by specialist coaches.",
 cta1:"Join now",hrows:[["Men — morning","7:00 AM – 10:30 AM"],["Men — evening","3:00 PM – 11:00 PM"],["Women","11:00 AM – 2:30 PM"],["Official holiday","Friday"]],
 fg:"Section",ft2:"Time",fAll:"All",fBoys:"Men",fGirls:"Women",tAm:"7:00 AM – 10:30 AM",tMid:"11:00 AM – 2:30 PM",tPm:"3:00 PM – 11:00 PM",tP1:"3:00 PM – 7:00 PM",tP2:"7:00 PM – 11:00 PM",none:"No coaches match this selection.",cName:"Coach name",cRole:"Specialty",
 noOffer:"No offers at the moment",plansT:"Memberships",more:"Show more",all:"Show all",less:"Show less",ig:"Instagram",fb:"Facebook",wa:"WhatsApp",cp:"Complaints and suggestions",cpH:"Send us your feedback",soon:"Coming soon",mapT:"Gym location",mapA:"Rukn al-Din – Asad al-Din Street",mapB:"Near Hamouleila Mosque",mapBtn:"Open in Google Maps",mapQ:"Sawan Gym Rukn al-Din Damascus",mapS:"Asad al-Din",cta2:"Explore the gym",
