@@ -1,0 +1,30 @@
+تحديث بطاقتي والعروض — SAWAN GYM
+================================
+
+الملفات التي تم تعديلها:
+- index.html: عرض إجمالي الجلسات والمستخدمة والمتبقية، مع معلومات الاشتراك.
+- style.css: تحسين تصميم البطاقة، QR، الأرقام، وتوافق الموبايل.
+- script.js: قراءة بنية API الحقيقية المتداخلة من نظام الإدارة، وإنشاء QR، وربط العروض وبطاقة العضو مباشرةً مع Render.
+
+روابط الربط المستخدمة:
+- العروض: GET https://sawangym-management.onrender.com/api/public/offers-site
+- البطاقة: POST https://sawangym-management.onrender.com/api/member-card
+
+إعداد Render المطلوب:
+- ALLOWED_ORIGINS يجب أن يحتوي على https://sawangym.vercel.app
+- إذا كان المتغير يحتوي على مواقع أخرى، أضف هذا العنوان بعد فاصلة ولا تحذف القيم القديمة.
+- لا تضع أي token سري داخل ملفات JavaScript العامة.
+
+مهم عند تركيب التحديث:
+1. خذ نسخة احتياطية من ملفات الموقع الحالية.
+2. استبدل index.html وstyle.css وscript.js بالملفات المرفقة.
+3. لا تحذف مجلد pics ولا الصور الموجودة فيه؛ هذا التحديث لا يحتاج إلى استبدال الصور.
+4. ارفع التغييرات إلى GitHub وانتظر نشر Vercel.
+5. افتح الموقع واضغط Ctrl+Shift+R ثم اختبر البطاقة والعروض.
+
+الحقول التي تعرضها البطاقة من API:
+- member.fullName و member.memberCode
+- visits.total و visits.used و visits.remaining
+- subscription.planName و subscription.endDate و subscription.status
+
+يجب أن يتحقق الخادم من رقم العضوية ورقم الهاتف معاً قبل إرجاع بيانات العضو.
